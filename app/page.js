@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import TaskList from './components/TaskList';
 
 export default function Home() {
@@ -7,6 +7,7 @@ export default function Home() {
   const [newTask, setNewTask] = useState('');
   const [filter, setFilter] = useState('all');
 
+  
   const handleAddTask = () => {
     if (newTask.trim() === '') return;
     setTasks([...tasks, { id: tasks.length + 1, text: newTask, completed: false }]);
